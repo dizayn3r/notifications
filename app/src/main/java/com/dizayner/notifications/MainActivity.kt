@@ -2,10 +2,10 @@ package com.dizayner.notifications
 
 import android.os.Bundle
 import android.widget.Button
-import com.dizayner.notifications.R
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity: AppCompactActivity() {
-    override fun onCreate (savedInstanceState: Bundle?){
+class MainActivity: AppCompatActivity(){
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
