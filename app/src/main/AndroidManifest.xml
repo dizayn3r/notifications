@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dizayner.notifications">
 
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
 
     <application
+        android:allowBackup="true"
         android:name=".Application"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,18 +17,38 @@
         android:theme="@style/Theme.Notifications"
         tools:ignore="AllowBackup">
 
-        <activity
-            android:name=".HomeActivity"
+        <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LockscreenActivity"
-            android:launchMode="singleTop"
-            android:showOnLockScreen="true" />
+
+        <activity android:name=".FullScreenActivity" />
+
+        <activity android:name=".LockScreenActivity"
+            android:showOnLockScreen="true"/>
+
+        <receiver
+            android:name=".NotificationReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="TODO" />
+
+<!--        <activity-->
+<!--            android:name=".HomeActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".LockscreenActivity"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:showOnLockScreen="true" />-->
     </application>
 
 </manifest>
